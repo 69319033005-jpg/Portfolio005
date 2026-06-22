@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jittreepop Portfolio | Student Portfolio</title>
+    <!-- นำเข้าฟอนต์ Kanit สไตล์โมเดิร์น -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* กำหนดตัวแปรสีสไตล์ Creative & Vibrant */
+        :root {
+            --bg-color: #060d18;       /* พื้นหลังหลักโทนฟ้าดำ */
+            --surface-color: #0b1326;  /* พื้นผิวด้านใน */
+            --primary-orange: #ff6a3d; /* สีส้มสดสำหรับไฮไลต์ */
+            --neon-blue: #00d8ff;      /* สีฟ้า neon */
+            --dark-text: #eef7ff;      /* ตัวอักษรสีอ่อน */
+            --card-bg: #0f1b3a;        /* การ์ดโทนฟ้าดำ */
+            --border-dark: #17305d;    /* ขอบโทนฟ้า */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top, rgba(0, 0, 0, 0.95), transparent 18%),
+                linear-gradient(180deg, #000000 0%, #0a0f1d 100%);
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ---------------------------------- */
+        /* 1. Hero Section */
+        /* ---------------------------------- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .highlight {
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 5px 25px;
+            display: inline-block;
+            transform: rotate(-2deg);
+            box-shadow: 6px 6px 0px var(--dark-text);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin-bottom: 3rem;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            background: linear-gradient(90deg, #000000, #0a1020);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 3px solid #0d1a3a;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 6px 6px 0px var(--neon-blue);
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-orange);
+            border-color: var(--primary-orange);
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px var(--dark-text);
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 0.6rem;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: linear-gradient(180deg, #000000, #0c1020);
+            color: #eef7ff;
+            border: 3px solid #0d1a3a;
+            border-radius: 999px;
+            padding: 0.55rem 0.9rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 4px 4px 0px var(--neon-blue);
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-orange);
+            color: white;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--dark-text);
+        }
+
+        /* ---------------------------------- */
+        /* 2. Profile & Skills Section */
+        /* ---------------------------------- */
+        .profile-section {
+            padding: 6rem 2rem;
+            background:
+                linear-gradient(180deg, #0a1224 0%, #0d1733 100%);
+            border-top: 4px solid var(--border-dark);
+            border-bottom: 4px solid var(--border-dark);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--surface-color);
+            border: 3px solid var(--border-dark);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 5px 5px 0px var(--neon-blue);
+            color: var(--dark-text);
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+
+        .info-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* ---------------------------------- */
+        /* 3. Portfolio Section */
+        /* ---------------------------------- */
+        .portfolio-section {
+            padding: 8rem 2rem;
+            background:
+                linear-gradient(180deg, #0a1224 0%, #040b14 100%);
+            color: white;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 4rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .work-card {
+            background-color: var(--card-bg);
+            border: 3px solid #333;
+            border-radius: 24px;
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: block;
+            max-width: 500px; /* จำกัดความกว้างเมื่อมีงานเดียวเพื่อให้ดูสวยงาม */
+            margin: 0 auto;
+        }
+
+        .work-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary-orange);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 250px;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--dark-text);
+        }
+
+        /* ---------------------------------- */
+        /* 4. Contact Footer Section */
+        /* ---------------------------------- */
+        .contact-footer {
+            padding: 6rem 2rem;
+            background:
+                linear-gradient(90deg, #07111f 0%, #0a1530 50%, #020913 100%);
+            color: white;
+            text-align: center;
+            border-top: 4px solid var(--border-dark);
+        }
+
+        .contact-footer h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            color: var(--dark-text);
+        }
+
+        .contact-btn {
+            background: linear-gradient(90deg, #000000, #0a1020);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 3px solid #0d1a3a;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 6px 6px 0px var(--neon-blue);
+            margin-top: 1rem;
+        }
+
+        .contact-btn:hover {
+            background-color: white;
+            color: var(--dark-text);
+            transform: scale(1.05);
+            box-shadow: 8px 8px 0px var(--dark-text);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
+            .contact-footer h2 { font-size: 2rem; }
+            .contact-btn { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero" id="top">
+        <h1>JITTREEPOP<br><span class="highlight">FAHLOEN.</span></h1>
+        <p>สวัสดีครับ! ผม นายจิตรีภพ ฟ้าเลื่อน นักศึกษาคนรุ่นใหม่ที่หลงใหลในความคิดสร้างสรรค์ และสนใจการวาดรูป ภาษาอังกฤษและภาษาญี่ปุ่น การทำ 3D และอนิเมชัน โดยผมพร้อมเปิดรับทุกไอเดียท้าทายเพื่อพัฒนาตนเองและสร้างผลงานที่เปี่ยมพลัง</p>
+        <a href="#about" class="cta-btn">ทำความรู้จักผม ⚡</a>
+        <div class="nav-links">
+            <a class="nav-btn" href="#top">หน้าแรก</a>
+            <a class="nav-btn" href="#about">About</a>
+            <a class="nav-btn" href="#skills">ทักษะ</a>
+            <a class="nav-btn" href="#experience">ประสบการณ์</a>
+            <a class="nav-btn" href="#work">ผลงาน</a>
+            <a class="nav-btn" href="#contact">ติดต่อ</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="profile-section" id="about" style="background-color: #fffaf4; border-top: 4px solid var(--dark-text); border-bottom: 4px solid var(--dark-text);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--primary-orange);">About</h2>
+            <div class="profile-grid">
+                <div class="info-card">
+                    <h3>Personal Info</h3>
+                    <img src="C:/PROJECT11/15 มิ.ย/.vscode/โฟลเดอร์ใหม่/601-9919.jpg" alt="Profile illustration" style="width:100%; max-width:220px; border-radius:18px; margin-bottom:1rem; border:3px solid #00f0ff; background:#111;" />
+                    <p><strong>ชื่อ-นามสกุล:</strong> นายจิตรีภพ ฟ้าเลื่อน</p>
+                    <p><strong>ชื่อเล่น:</strong> โบ้ท</p>
+                    <p><strong>อายุ:</strong> 18 ปี</p>
+                </div>
+                <div class="info-card">
+                    <h3>Education</h3>
+                    <p>อดีตเคยศึกษาอยู่ที่: <strong>โรงเรียนสำโรงวิทยาคาร</strong></p>
+                    <p>ระดับผลการเรียน (GPAX): <strong style="color: var(--primary-orange); font-size: 1.3rem;">3.47</strong></p>
+                    <p style="margin-top: 5px;">ปัจจุบัน: สถานะนักศึกษา</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="profile-section" id="skills">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1rem;">ทักษะ</h2>
+            <div class="profile-grid">
+                <div class="info-card">
+                    <h3>Hard Skills</h3>
+                    <p><strong>English Communication:</strong> สามารถใช้และสื่อสารภาษาอังกฤษในการทำงาน เรียนรู้ และค้นคว้าข้อมูลได้อย่างมีประสิทธิภาพ</p>
+                    <p style="margin-top: 8px;"><strong>Video Editing:</strong> มีประสบการณ์ในการตัดต่อวิดีโอและปรับแต่งเนื้อหาให้ดูน่าสนใจ</p>
+                    <p style="margin-top: 8px;"><strong>Drawing:</strong> สนใจและมีความสามารถในการวาดรูปสร้างสรรค์งานศิลปะของตัวเอง</p>
+                    <p style="margin-top: 8px;"><strong>Java / Python:</strong> มีความรู้พื้นฐานในการเขียนโค้ดด้วยภาษา Java และ Python</p>
+                </div>
+                <div class="info-card">
+                    <h3>Soft Skills</h3>
+                    <p><strong>Teamwork & Collaboration:</strong> ทำงานร่วมกับผู้อื่นได้ดี ปรับตัวเก่ง มีมนุษยสัมพันธ์ พร้อมร่วมมือและรับฟังความเห็นของทีม</p>
+                    <p style="margin-top: 8px;"><strong>Creative Thinking:</strong> สามารถคิดไอเดียใหม่และนำเสนอแนวทางการทำงานแบบสร้างสรรค์</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="profile-section" id="experience">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1rem;">ประสบการณ์</h2>
+            <div class="profile-grid">
+                <div class="info-card">
+                    <h3>ประสบการณ์ด้านการวาดรูป</h3>
+                    <p>มีความสนใจและทักษะในการวาดรูปสร้างสรรค์งานศิลปะที่มีสไตล์เป็นของตัวเอง</p>
+                </div>
+                <div class="info-card">
+                    <h3>ประสบการณ์ด้านการตัดต่อ</h3>
+                    <p>มีความรู้ในการตัดต่อวิดีโอและปรับแต่งเนื้อหาให้ดูน่าสนใจและมีมิติ</p>
+                </div>
+                <div class="info-card">
+                    <h3>ประสบการณ์ด้านการเขียนโค้ด</h3>
+                    <p>มีพื้นฐานการเขียนโปรแกรมด้วย Java และ Python และสามารถพัฒนาความรู้เพิ่มเติมต่อไป</p>
+                </div>
+                <div class="info-card">
+                    <h3>ประสบการณ์ด้านการแปลมังงะ</h3>
+                    <p>สนใจและมีประสบการณ์ในการสร้างผลงานแนวการ์ตูนมังงะที่มีแรงบันดาลใจและสไตล์เฉพาะตัว</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="work">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title" style="text-align: left;">Selected Work / ผลงานเด่น</h2>
+            
+            <!-- แสดงผลงานภาษาอังกฤษที่เหลืออยู่ชิ้นเดียวให้อยู่กึ่งกลางหน้าจออย่างสวยงาม -->
+            <a class="work-card" href="#" aria-label="ดูผลงานการเเปลมังะ">
+                <h3>ผลงานการเเปลมังะ</h3>
+                <p>The Strongest Knight Become To Lolicon Vampire</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Footer Section -->
+    <section class="contact-footer" id="contact">
+        <div class="container">
+            <h2>ช่องทางการติดต่อ</h2>
+            <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.6; color: #fff;">เบอร์: 0994872180<br>Email: vboii0945@gmail.com</p>
