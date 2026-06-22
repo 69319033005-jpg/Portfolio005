@@ -12,11 +12,13 @@
     <style>
         /* กำหนดตัวแปรสีสไตล์ Creative & Vibrant */
         :root {
-            --bg-color: #fcfbf7;       /* สีพื้นหลังขาวครีม นุ่มสายตา */
-            --primary-orange: #ff5e36; /* สีส้มสด ปลุกพลังความสร้างสรรค์ */
-            --neon-blue: #00f0ff;      /* สีฟ้าตัดกัน เพิ่มมิติเทคโนโลยี */
-            --dark-text: #1a1a1a;      /* สีตัวอักษรและพื้นหลังส่วนสีเข้ม */
-            --card-bg: #252525;        /* สีพื้นหลังของการ์ดผลงาน */
+            --bg-color: #060d18;       /* พื้นหลังหลักโทนฟ้าดำ */
+            --surface-color: #0b1326;  /* พื้นผิวด้านใน */
+            --primary-orange: #ff6a3d; /* สีส้มสดสำหรับไฮไลต์ */
+            --neon-blue: #00d8ff;      /* สีฟ้า neon */
+            --dark-text: #eef7ff;      /* ตัวอักษรสีอ่อน */
+            --card-bg: #0f1b3a;        /* การ์ดโทนฟ้าดำ */
+            --border-dark: #17305d;    /* ขอบโทนฟ้า */
         }
 
         * {
@@ -31,7 +33,9 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            background:
+                radial-gradient(circle at top, rgba(0, 0, 0, 0.95), transparent 18%),
+                linear-gradient(180deg, #000000 0%, #0a0f1d 100%);
             color: var(--dark-text);
             overflow-x: hidden;
         }
@@ -81,14 +85,14 @@
         }
 
         .cta-btn {
-            background-color: var(--dark-text);
+            background: linear-gradient(90deg, #000000, #0a1020);
             color: white;
             padding: 1.2rem 3rem;
             font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
-            border: 3px solid var(--dark-text);
+            border: 3px solid #0d1a3a;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 6px 6px 0px var(--neon-blue);
             display: inline-block;
@@ -113,9 +117,9 @@
         }
 
         .nav-btn {
-            background-color: white;
-            color: var(--dark-text);
-            border: 3px solid var(--dark-text);
+            background: linear-gradient(180deg, #000000, #0c1020);
+            color: #eef7ff;
+            border: 3px solid #0d1a3a;
             border-radius: 999px;
             padding: 0.55rem 0.9rem;
             text-decoration: none;
@@ -137,9 +141,10 @@
         /* ---------------------------------- */
         .profile-section {
             padding: 6rem 2rem;
-            background-color: #f0ede6;
-            border-top: 4px solid var(--dark-text);
-            border-bottom: 4px solid var(--dark-text);
+            background:
+                linear-gradient(180deg, #0a1224 0%, #0d1733 100%);
+            border-top: 4px solid var(--border-dark);
+            border-bottom: 4px solid var(--border-dark);
         }
 
         .profile-grid {
@@ -150,11 +155,12 @@
         }
 
         .info-card {
-            background: white;
-            border: 3px solid var(--dark-text);
+            background: var(--surface-color);
+            border: 3px solid var(--border-dark);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 5px 5px 0px var(--dark-text);
+            box-shadow: 5px 5px 0px var(--neon-blue);
+            color: var(--dark-text);
         }
 
         .info-card h3 {
@@ -173,7 +179,8 @@
         /* ---------------------------------- */
         .portfolio-section {
             padding: 8rem 2rem;
-            background-color: var(--dark-text);
+            background:
+                linear-gradient(180deg, #0a1224 0%, #040b14 100%);
             color: white;
         }
 
@@ -227,10 +234,11 @@
         /* ---------------------------------- */
         .contact-footer {
             padding: 6rem 2rem;
-            background-color: var(--primary-orange);
+            background:
+                linear-gradient(90deg, #07111f 0%, #0a1530 50%, #020913 100%);
             color: white;
             text-align: center;
-            border-top: 4px solid var(--dark-text);
+            border-top: 4px solid var(--border-dark);
         }
 
         .contact-footer h2 {
@@ -242,14 +250,14 @@
         }
 
         .contact-btn {
-            background-color: var(--dark-text);
+            background: linear-gradient(90deg, #000000, #0a1020);
             color: white;
             padding: 1.2rem 3rem;
             font-size: 1.5rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 12px;
-            border: 3px solid var(--dark-text);
+            border: 3px solid #0d1a3a;
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 6px 6px 0px var(--neon-blue);
@@ -296,7 +304,7 @@
             <div class="profile-grid">
                 <div class="info-card">
                     <h3>Personal Info</h3>
-                    <img src="as.png" alt="Profile illustration" style="width:100%; max-width:220px; border-radius:18px; margin-bottom:1rem; border:3px solid #00f0ff; background:#111;" />
+                    <img src="C:/PROJECT11/15 มิ.ย/.vscode/โฟลเดอร์ใหม่/601-9919.jpg" alt="Profile illustration" style="width:100%; max-width:220px; border-radius:18px; margin-bottom:1rem; border:3px solid #00f0ff; background:#111;" />
                     <p><strong>ชื่อ-นามสกุล:</strong> นายจิตรีภพ ฟ้าเลื่อน</p>
                     <p><strong>ชื่อเล่น:</strong> โบ้ท</p>
                     <p><strong>อายุ:</strong> 18 ปี</p>
